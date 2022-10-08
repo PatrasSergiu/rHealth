@@ -1,0 +1,63 @@
+@startuml
+
+class "licenta_patras::model::appUser.dart::AppUser" {
+  {static} +String colId
+  {static} +String colFullName
+  {static} +String colTelefon
+  {static} +String colEmail
+  {static} +String colIdDoctor
+  {static} +String colRole
+  {static} +String colMedicatie
+  {static} +String colAfectiuni
+  {static} +String colVarsta
+  {static} +String colContra
+  {static} +String colProfile
+  +int? role
+  +int? varsta
+  +String? id
+  +String? fullName
+  +String? telefon
+  +String? idDoctor
+  +String? email
+  +String? contraindicatii
+  +String? medicatie
+  +String? afectiuni
+  +String? profilePic
+  +Map<String, dynamic> toMap()
+  +Map<String, dynamic> toMapPatient()
+  +Map<String, dynamic> toMapDoctor()
+}
+
+class "licenta_patras::model::chat_message.dart::ChatMessages" {
+  +String idFrom
+  +String idTo
+  +String timestamp
+  +String content
+  +int type
+  +Map<String, dynamic> toJson()
+}
+
+class "licenta_patras::model::Review.dart::Review" {
+  {static} +String colIdDoctor
+  {static} +String colReviewer
+  {static} +String colContent
+  {static} +String colStars
+  {static} +String colRevName
+  +num? stars
+  +String? idDoctor
+  +String? idReviewer
+  +String? content
+  +String? reviewerName
+  +Map<String, dynamic> toMap()
+}
+
+
+
+
+class "licenta_patras::services::chat_provider.dart::MessageType" {
+  {static} +int text
+  {static} +int image
+  {static} +int sticker
+}
+
+@enduml

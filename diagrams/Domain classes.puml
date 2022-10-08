@@ -1,0 +1,112 @@
+@startuml
+set namespaceSeparator ::
+
+class "licenta_patras::model::appUser.dart::AppUser" {
+
+}
+
+class "licenta_patras::model::chat_message.dart::ChatMessages" {
+
+}
+
+class "licenta_patras::model::Review.dart::Review" {
+
+}
+
+class "licenta_patras::services::chat_provider.dart::ChatProvider" {
+
+}
+
+class "licenta_patras::services::chat_provider.dart::MessageType" {
+
+}
+
+class "licenta_patras::services::firebase_service.dart::FirebaseService" {
+
+}
+
+"licenta_patras::services::firebase_service.dart::FirebaseService" o-- "cloud_firestore::cloud_firestore.dart::FirebaseFirestore"
+
+class "licenta_patras::services::helper.dart::StarRating" {
+
+}
+
+"licenta_patras::services::helper.dart::StarRating" o-- "flutter::src::rendering::flex.dart::MainAxisAlignment"
+
+class "licenta_patras::services::home_provider.dart::HomeProvider" {
+)
+}
+
+"licenta_patras::services::home_provider.dart::HomeProvider" o-- "cloud_firestore::cloud_firestore.dart::FirebaseFirestore"
+
+class "licenta_patras::services::profile_provider.dart::ProfileProvider" {
+
+}
+
+class "licenta_patras::ui::auth::login::google_authentication.dart::GoogleSignInProvider" {
+
+}
+
+"licenta_patras::ui::auth::login::google_authentication.dart::GoogleSignInProvider" o-- "google_sign_in::google_sign_in.dart::GoogleSignIn"
+"licenta_patras::ui::auth::login::google_authentication.dart::GoogleSignInProvider" o-- "google_sign_in::google_sign_in.dart::GoogleSignInAccount"
+
+class "licenta_patras::ui::auth::login::login.dart::_LoginPageState" {
+  +Widget build()
+}
+
+class "licenta_patras::ui::auth::signup::google_splash_screen.dart::_GoogleDetailsScreenState" {
+
+}
+
+"licenta_patras::ui::auth::signup::google_splash_screen.dart::_GoogleDetailsScreenState" o-- "licenta_patras::services::firebase_service.dart::FirebaseService"
+
+class "licenta_patras::ui::auth::signup::sign_up_screen.dart::_SignUpScreenState" {
+
+}
+
+"licenta_patras::ui::auth::signup::sign_up_screen.dart::_SignUpScreenState" o-- "licenta_patras::services::firebase_service.dart::FirebaseService"
+
+class "licenta_patras::ui::screens::admin.dart::_AdminScreenState" {
+
+}
+
+"licenta_patras::ui::screens::admin.dart::_AdminScreenState" o-- "licenta_patras::services::firebase_service.dart::FirebaseService"
+
+class "licenta_patras::ui::screens::changeDoctor_screen.dart::_ChangeDoctorScreenState" {
+
+}
+
+"licenta_patras::ui::screens::changeDoctor_screen.dart::_ChangeDoctorScreenState" o-- "licenta_patras::services::firebase_service.dart::FirebaseService"
+
+
+
+class "licenta_patras::ui::screens::chat_page.dart::_ChatPageState" {
+}
+
+"licenta_patras::ui::screens::chat_page.dart::_ChatPageState" o-- "licenta_patras::services::chat_provider.dart::ChatProvider"
+"licenta_patras::ui::screens::chat_page.dart::_ChatPageState" o-- "licenta_patras::model::appUser.dart::AppUser"
+
+class "licenta_patras::ui::screens::doctor.dart::_DoctorScreenState" {
+
+}
+
+"licenta_patras::ui::screens::doctor.dart::_DoctorScreenState" o-- "licenta_patras::services::firebase_service.dart::FirebaseService"
+"licenta_patras::ui::screens::doctor.dart::_DoctorScreenState" o-- "licenta_patras::services::home_provider.dart::HomeProvider"
+
+class "licenta_patras::ui::screens::editUserPage.dart::_EditScreenState" {
+
+}
+
+"licenta_patras::ui::screens::editUserPage.dart::_EditScreenState" o-- "licenta_patras::model::appUser.dart::AppUser"
+"licenta_patras::ui::screens::editUserPage.dart::_EditScreenState" o-- "licenta_patras::services::firebase_service.dart::FirebaseService"
+
+class "licenta_patras::ui::screens::pacient_screen.dart::_PacientScreenState" {
+
+}
+
+"licenta_patras::ui::screens::pacient_screen.dart::_PacientScreenState" o-- "licenta_patras::services::firebase_service.dart::FirebaseService"
+"licenta_patras::ui::screens::pacient_screen.dart::_PacientScreenState" o-- "licenta_patras::model::appUser.dart::AppUser"
+"licenta_patras::ui::screens::pacient_screen.dart::_PacientScreenState" o-- "licenta_patras::model::Review.dart::Review"
+
+
+@enduml
